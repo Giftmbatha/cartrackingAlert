@@ -2,8 +2,10 @@ import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { useFonts, Roboto_400Regular, Roboto_500Medium, Roboto_700Bold } from '@expo-google-fonts/roboto';
 import { FontAwesome, MaterialIcons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 export default function SignupScreen() {
+   const navigation = useNavigation();
   let [fontsLoaded] = useFonts({
     Roboto_400Regular,
     Roboto_500Medium,
@@ -14,15 +16,15 @@ export default function SignupScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Sign Up</Text>
       <View style={styles.inputContainer}>
-        <FontAwesome name="user" size={24} color="#888" style={styles.icon} />
+        <FontAwesome name="user" size={22} color="#888" style={styles.icon} />
         <TextInput style={styles.input} placeholder="Username" placeholderTextColor="#888" />
       </View>
       <View style={styles.inputContainer}>
-        <FontAwesome name="envelope" size={24} color="#888" style={styles.icon} />
+        <FontAwesome name="envelope" size={22} color="#888" style={styles.icon} />
         <TextInput style={styles.input} placeholder="Email" placeholderTextColor="#888" />
       </View>
       <View style={styles.inputContainer}>
-        <MaterialIcons name="lock" size={24} color="#888" style={styles.icon} />
+        <MaterialIcons name="lock" size={22} color="#888" style={styles.icon} />
         <TextInput style={styles.input} placeholder="Password" placeholderTextColor="#888" secureTextEntry />
       </View>
       <TouchableOpacity style={styles.button}>
@@ -30,17 +32,21 @@ export default function SignupScreen() {
       </TouchableOpacity>
       <View style={styles.socialLoginContainer}>
         <TouchableOpacity style={[styles.socialButton, styles.facebookButton]}>
-          <FontAwesome name="facebook" size={24} color="#fff" />
+          <FontAwesome name="facebook" size={22} color="#fff" />
           <Text style={styles.socialButtonText}>Sign up with Facebook</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.socialButton, styles.googleButton]}>
-          <FontAwesome name="google" size={24} color="#fff" />
+          <FontAwesome name="google" size={22} color="#fff" />
           <Text style={styles.socialButtonText}>Sign up with Google</Text>
         </TouchableOpacity>
       </View>
       <TouchableOpacity style={styles.linkContainer} onPress={() => navigation.navigate('Login')}>
         <Text style={styles.linkText}>Already have an account? Login</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Map')}>
+  <Text style={styles.buttonText}>Go to Map</Text>
+</TouchableOpacity>
     </View>
   );
 }

@@ -19,11 +19,11 @@ export default function LoginScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Login</Text>
       <View style={styles.inputContainer}>
-        <FontAwesome name="envelope" size={24} color="#888" style={styles.icon} />
+        <FontAwesome name="envelope" size={22} color="#888" style={styles.icon} />
         <TextInput style={styles.input} placeholder="Email" placeholderTextColor="#888" />
       </View>
       <View style={styles.inputContainer}>
-        <MaterialIcons name="lock" size={24} color="#888" style={styles.icon} />
+        <MaterialIcons name="lock" size={22} color="#888" style={styles.icon} />
         <TextInput style={styles.input} placeholder="Password" placeholderTextColor="#888" secureTextEntry />
       </View>
       <TouchableOpacity style={styles.button}>
@@ -31,18 +31,24 @@ export default function LoginScreen() {
       </TouchableOpacity>
       <View style={styles.socialLoginContainer}>
         <TouchableOpacity style={[styles.socialButton, styles.facebookButton]}>
-          <FontAwesome name="facebook" size={24} color="#fff" />
+          <FontAwesome name="facebook" size={22} color="#fff" />
           <Text style={styles.socialButtonText}>Sign in with Facebook</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.socialButton, styles.googleButton]}>
-          <FontAwesome name="google" size={24} color="#fff" />
+          <FontAwesome name="google" size={22} color="#fff" />
           <Text style={styles.socialButtonText}>Sign in with Google</Text>
         </TouchableOpacity>
       </View>
       <TouchableOpacity style={styles.linkContainer} onPress={() => navigation.navigate('Signup')}>
         <Text style={styles.linkText}>Don't have an account? Sign Up</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Map')}>
+    <Text style={styles.buttonText}>Go to Map</Text>
+    </TouchableOpacity>
     </View>
+
+    
   );
 }
 
