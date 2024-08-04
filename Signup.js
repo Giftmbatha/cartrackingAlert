@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
     color: '#fff',
     marginBottom: 40,
-    fontFamily: 'Roboto_700Bold',
+    fontWeight: "bold",
   },
   inputContainer: {
     flexDirection: 'row',
